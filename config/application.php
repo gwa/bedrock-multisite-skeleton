@@ -69,7 +69,9 @@ define('DISALLOW_FILE_EDIT', true);
 /**
  * Wordpress multisite
  */
-if (getenv('WP_MULTISITE') !== 'false') {
+define('WP_ALLOW_MULTISITE', (getenv('WP_MULTISITE') !== 'false' ? true : false));
+
+if (getenv('WP_MULTISITE') !== 'false' && getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false') {
   require_once __DIR__ . '/multisite.php';
 
 /**

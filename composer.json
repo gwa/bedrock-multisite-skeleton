@@ -47,7 +47,8 @@
     "jarednova/timber"                        : "~0.21",
     "johnpbloch/wordpress"                    : "4.2.1",
     "gwa/multisite-directory-resolver"        : "~0.0.5",
-    "wpackagist-plugin/multisite-enhancements": "~1.1.0"
+    "wpackagist-plugin/multisite-enhancements": "~1.1.0",
+    "roots/soil"                              :"~3.4"
   },
   "require-dev": {
     "vlucas/phpdotenv"                        : "~1.1.0",
@@ -63,7 +64,7 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/"           : ["type:wordpress-muplugin"],
+      "web/app/mu-plugins/{$name}/"           : ["type:wordpress-muplugin", "roots/soil"],
       "web/app/plugins/{$name}/"              : ["type:wordpress-plugin"],
       "web/app/themes/{$name}/"               : ["type:wordpress-theme"]
     },

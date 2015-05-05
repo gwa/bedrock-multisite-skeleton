@@ -8,6 +8,6 @@ require_once(dirname(__DIR__) . '/vendor/autoload.php');
 require_once(dirname(__DIR__) . '/config/application.php');
 require_once(ABSPATH . 'wp-settings.php');
 
-if (getenv('WP_MULTISITE') !== 'false' && class_exists('Gwa\Wordpress\MultisiteDirectoryResolver')) {
+if (getenv('WP_MULTISITE') !== 'false' && defined('WP_INSTALL_PATH') && class_exists('Gwa\Wordpress\MultisiteDirectoryResolver')) {
     (new Gwa\Wordpress\MultisiteDirectoryResolver(WP_INSTALL_PATH))->init();
 }
