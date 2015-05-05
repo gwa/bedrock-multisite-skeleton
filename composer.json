@@ -1,0 +1,74 @@
+{
+  "name"       : "gwa/bedrock-multisite-skeleton",
+  "type"       : "project",
+  "license"    : "MIT",
+  "description": "A modern WordPress stack",
+  "homepage"   : "https://roots.io/bedrock/",
+  "authors"    : [{
+      "name"    : "Scott Walkinshaw",
+      "email"   : "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    },
+    {
+      "name"    : "Ben Word",
+      "email"   : "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    },
+    {
+      "name"    : "Great White Ark",
+      "homepage": "http://www.greatwhiteark.com"
+  }],
+  "keywords": [
+    "bedrock", "roots", "wordpress", "stack", "composer", "vagrant", "wp", "multisite", "twig", "developer", "dev"
+  ],
+  "support": {
+    "issues"                                  : "https://github.com/roots/bedrock/issues",
+    "forum"                                   : "https://discourse.roots.io/category/bedrock"
+  },
+  "config": {
+    "preferred-install"                       : "dist",
+    "generate-salts"                          : true
+  },
+  "autoload": {
+    "psr-4": {
+      "Roots\\Bedrock\\Installer\\"           : "scripts/"
+    }
+  },
+  "scripts": {
+    "post-root-package-install"               : ["Roots\\Bedrock\\Installer::addSalts"]
+  },
+  "repositories": [{
+      "type": "composer",
+      "url" : "http://wpackagist.org"
+  }],
+  "require": {
+    "php"                                     : ">=5.4",
+    "composer/installers"                     : "~1.0.12",
+    "jarednova/timber"                        : "~0.21",
+    "johnpbloch/wordpress"                    : "4.2.1",
+    "gwa/multisite-directory-resolver"        : "~0.0.5",
+    "wpackagist-plugin/multisite-enhancements": "~1.1.0"
+  },
+  "require-dev": {
+    "vlucas/phpdotenv"                        : "~1.1.0",
+    "phpunit/phpunit"                         : "~4.6.6",
+    "10up/wp_mock"                            : "~0.1.1",
+
+    "wpackagist-plugin/debug-bar"             : "~0.8.2",
+    "wpackagist-plugin/debug-bar-timber"      : "~0.3",
+    "wpackagist-plugin/debug-bar-post-types"  : "~1.2",
+    "wpackagist-plugin/developer"             : "~1.2.5",
+    "wpackagist-plugin/log-deprecated-notices": "~0.3",
+    "roots/wp-stage-switcher"                 : "~1.0.3"
+  },
+  "extra": {
+    "installer-paths": {
+      "web/app/mu-plugins/{$name}/"           : ["type:wordpress-muplugin"],
+      "web/app/plugins/{$name}/"              : ["type:wordpress-plugin"],
+      "web/app/themes/{$name}/"               : ["type:wordpress-theme"]
+    },
+    "wordpress-install-dir"                   : "web/wp"
+  },
+  "minimum-stability"                         : "dev",
+  "prefer-stable"                             : true
+}

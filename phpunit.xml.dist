@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="http://schema.phpunit.de/4.1/phpunit.xsd"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="bootstrap.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnError="false"
+         stopOnFailure="false"
+         syntaxCheck="true"
+         verbose="true"
+>
+    <php>
+        <ini name="error_reporting" value="-1" />
+        <ini name="intl.default_locale" value="en" />
+        <ini name="intl.error_level" value="0" />
+        <ini name="memory_limit" value="-1" />
+    </php>
+
+     <testsuites>
+        <testsuite name="Bedrock Multisite Skeleton">
+            <directory>./web/app/plugins/*/tests</directory>
+            <directory>./web/app/themes/*/tests</directory>
+        </testsuite>
+     </testsuites>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./web/app/</directory>
+            <exclude>
+                <directory>./web/app/plugins/*/tests</directory>
+                <directory>./web/app/themes/*/tests</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+
+    <logging>
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="coverage-html" target="./report" charset="UTF-8"
+            yui="true" highlight="true"
+            lowUpperBound="50" highLowerBound="80" />
+        <log type="coverage-clover" target="build/logs/clover.xml"/>
+        <log type="testdox-html" target="build/logs/testdox-html.html" logIncompleteSkipped="false"/>
+        <log type="junit" target="build/logs/logfile.xml" logIncompleteSkipped="false"/>
+    </logging>
+</phpunit>
