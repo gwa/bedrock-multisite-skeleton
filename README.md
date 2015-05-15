@@ -1,5 +1,5 @@
-# [Bedrock](https://roots.io/bedrock/)
-[![Build Status](https://travis-ci.org/roots/bedrock.svg)](https://travis-ci.org/roots/bedrock)
+# [Bedrock](https://github.com/gwa/bedrock-multisite-skeleton/)
+[![Build Status](https://travis-ci.org/gwa/bedrock-multisite-skeleton.svg)](https://travis-ci.org/gwa/bedrock-multisite-skeleton)
 
 Bedrock is a modern WordPress stack that helps you get started with the best development tools and project structure.
 
@@ -11,7 +11,13 @@ Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](htt
 * Better folder structure
 * Easy WordPress configuration with environment specific files
 * Environment variables with [Dotenv](https://github.com/vlucas/phpdotenv)
+* Whoops is a nice little library that helps you deal with errors and exceptions in a less painful way.
 * Autoloader for mu-plugins (use regular plugins as mu-plugins)
+* [Debug Bar](https://wordpress.org/plugins/debug-bar/) Adds a debug menu to the admin bar that shows query, cache, and other helpful debugging information.
+* [Developer](https://wordpress.org/plugins/developer/) A plugin, which helps WordPress developers develop.
+* [Stage Switcher] Detects all the enviroments in WordPress.
+* [MultisiteDirectoryResolver](https://github.com/gwa/WpMultisiteDirectoryResolver) Adds filters that correct directory paths in a Wordpress multisite install with the WordPress installation in a custom subfolder.
+* Koodimonni composer lang support 
 
 Use [bedrock-ansible](https://github.com/roots/bedrock-ansible) for additional features:
 
@@ -35,16 +41,9 @@ Use [bedrock-ansible](https://github.com/roots/bedrock-ansible) for additional f
   * `WP_ENV` - Set to environment (`development`, `staging`, `production`)
   * `WP_HOME` - Full URL to WordPress home (http://example.com)
   * `WP_SITEURL` - Full URL to WordPress including subdirectory (http://example.com/wp)
-4. Add theme(s)
-4. Set your site vhost document root to `/path/to/site/web/` (`/path/to/site/current/web/` if using deploys)
-5. Access WP admin at `http://example.com/wp/wp-admin`
+4. Access WP admin at `http://example.com/wp/wp-admin`
 
 ## Deploys
-
-There are two methods to deploy Bedrock sites out of the box:
-
-* [bedrock-ansible](https://github.com/roots/bedrock-ansible)
-* [bedrock-capistrano](https://github.com/roots/bedrock-capistrano)
 
 Any other deployment method can be used as well with one requirement:
 
@@ -52,7 +51,7 @@ Any other deployment method can be used as well with one requirement:
 
 ## Documentation
 
-* [Folder structure](https://github.com/roots/bedrock/wiki/Folder-structure)
+* [Folder structure]()
 * [Configuration files](https://github.com/roots/bedrock/wiki/Configuration-files)
 * [Environment variables](https://github.com/roots/bedrock/wiki/Environment-variables)
 * [Composer](https://github.com/roots/bedrock/wiki/Composer)

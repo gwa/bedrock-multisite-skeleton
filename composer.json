@@ -3,7 +3,7 @@
   "type"       : "project",
   "license"    : "MIT",
   "description": "A modern WordPress stack",
-  "homepage"   : "https://roots.io/bedrock/",
+  "homepage"   : "https://github.com/gwa/bedrock-multisite-skeleton/",
   "authors"    : [{
       "name"    : "Scott Walkinshaw",
       "email"   : "scott.walkinshaw@gmail.com",
@@ -22,8 +22,7 @@
     "bedrock", "roots", "wordpress", "stack", "composer", "vagrant", "wp", "multisite", "twig", "developer", "dev"
   ],
   "support": {
-    "issues"                                  : "https://github.com/roots/bedrock/issues",
-    "forum"                                   : "https://discourse.roots.io/category/bedrock"
+    "issues"                                  : "https://github.com/gwa/bedrock-multisite-skeleton/issues"
   },
   "config": {
     "preferred-install"                       : "dist",
@@ -31,7 +30,8 @@
   },
   "autoload": {
     "psr-4": {
-      "Roots\\Bedrock\\Installer\\"           : "scripts/"
+      "Roots\\Bedrock\\Installer\\"           : "scripts/",
+      "Gwa\\Wordpress\\ErrorHandler\\"        : "scripts/Gwa/ErrorHandler/"
     }
   },
   "scripts": {
@@ -40,23 +40,28 @@
   "repositories": [{
       "type": "composer",
       "url" : "http://wpackagist.org"
+  }, {
+      "type": "composer",
+      "url": "http://languages.koodimonni.fi"
   }],
   "require": {
     "php"                                     : ">=5.4",
     "composer/installers"                     : "~1.0.12",
-    "jarednova/timber"                        : "~0.21",
-    "johnpbloch/wordpress"                    : "4.2.1",
     "gwa/multisite-directory-resolver"        : "~0.0.5",
-    "wpackagist-plugin/multisite-enhancements": "~1.1.0",
-    "roots/soil"                              :"~3.4"
+    "johnpbloch/wordpress"                    : "4.2.2",
+
+    "koodimonni/composer-dropin-installer"    : "0.2.4",
+    "koodimonni-language/de_de"               : "4.2.2",
+    "koodimonni-language/en_gb"               : "4.2.2",
+
+    "wpackagist-plugin/multisite-enhancements": "~1.1.0"
   },
   "require-dev": {
     "vlucas/phpdotenv"                        : "~1.1.0",
     "phpunit/phpunit"                         : "~4.6.6",
-    "10up/wp_mock"                            : "~0.1.1",
+    "filp/whoops"                             : "~1.1.5",
 
     "wpackagist-plugin/debug-bar"             : "~0.8.2",
-    "wpackagist-plugin/debug-bar-timber"      : "~0.3",
     "wpackagist-plugin/debug-bar-post-types"  : "~1.2",
     "wpackagist-plugin/developer"             : "~1.2.5",
     "wpackagist-plugin/log-deprecated-notices": "~0.3",
@@ -64,11 +69,14 @@
   },
   "extra": {
     "installer-paths": {
-      "web/app/mu-plugins/{$name}/"           : ["type:wordpress-muplugin", "roots/soil"],
-      "web/app/plugins/{$name}/"              : ["type:wordpress-plugin"],
-      "web/app/themes/{$name}/"               : ["type:wordpress-theme"]
+      "public/app/mu-plugins/{$name}/"        : ["type:wordpress-muplugin"],
+      "public/app/plugins/{$name}/"           : ["type:wordpress-plugin", "type:wordpress-dropin"],
+      "public/app/themes/{$name}/"            : ["type:wordpress-theme"],
+      "public/app/languages/"                 : ["type:wordpress-language"],
+      "public/app/languages/plugins/"         : ["type:wordpress-plugin-language"],
+      "public/app/languages/themes/"          : ["type:wordpress-theme-language"]
     },
-    "wordpress-install-dir"                   : "web/wp"
+    "wordpress-install-dir"                   : "public/wp"
   },
   "minimum-stability"                         : "dev",
   "prefer-stable"                             : true
