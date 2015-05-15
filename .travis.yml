@@ -20,9 +20,7 @@ before_install:
 
 install:
   - curl http://get.sensiolabs.org/php-cs-fixer.phar -o php-cs-fixer.phar
-  - curl http://get.sensiolabs.org/security-checker.phar -o security-checker.phar
 
 script:
   - php -n php-cs-fixer.phar fix -v --dry-run
-  - php -n security-checker.phar security:check --format=simple
   - phpcs --standard=ruleset.xml --extensions=php --ignore=public/wp/,vendor/ -n -s .
