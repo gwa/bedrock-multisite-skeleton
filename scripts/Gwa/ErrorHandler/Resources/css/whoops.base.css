@@ -1,0 +1,495 @@
+pre.prettyprint, code.prettyprint {
+  font-weight: normal;
+  font-family: Source Code Pro, Monaco, Consolas, Lucida Console, monospace;
+  background: #272727;
+  color: #999999;
+  font-size: 11px;
+  line-height: 1.5em;
+}
+
+.cf {
+  *zoom: 1;
+}
+.cf:before {
+  content: " ";
+  display: table;
+}
+.cf:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
+body {
+  font: 14px Lucida Grande, Lucida Sans Unicode, Lucida Sans, Geneva, Verdana, sans-serif;
+  color: #2b2b2b;
+  background-color: #d4d4d4;
+  padding: 0;
+  margin: 0;
+  max-height: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  left: 0;
+  top: 0;
+}
+
+.branding {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #777777;
+  font-size: 10px;
+  z-index: 100;
+}
+.branding a {
+  color: #cd3f3f;
+}
+
+header {
+  padding: 20px;
+  color: #555555;
+  background-color: #d2d2d2;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-left: 5px solid #e94d4d;
+  background-repeat: no-repeat;
+  background-position: right;
+}
+
+.exc-title {
+  margin: 0;
+  font-weight: bold;
+}
+
+#plain-exception {
+  opacity: 0.8;
+}
+
+.exc-title-primary {
+  color: #fff100;
+}
+
+.exc-message {
+  font-size: 16px;
+  margin: 5px 0;
+  word-wrap: break-word;
+  font-weight: bold;
+}
+
+.stack-container {
+  height: 100%;
+  position: relative;
+}
+
+.details-container {
+  height: 100%;
+  overflow: auto;
+  float: right;
+  width: 70%;
+  background: white;
+}
+
+.details {
+  padding: 10px 20px;
+  border-left: 5px solid rgba(0, 0, 0, 0.2);
+}
+
+.frames-container {
+  height: 100%;
+  overflow: auto;
+  float: left;
+  width: 30%;
+  background: #272727;
+}
+
+.frame {
+  padding: 14px;
+  color: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.frame:nth-child(even) {
+  color: white;
+  background: rgba(255, 255, 255, 0.04);
+}
+.frame.active {
+  background-color: #fff100;
+  color: black;
+}
+.frame.active .frame-index {
+  font-size: 11px;
+  color: white;
+}
+.frame.active .frame-class {
+  color: white;
+}
+.frame:not('.active') :hover {
+  background: #3a3a3a;
+}
+
+.frame-class {
+  font-weight: bold;
+  color: #fff100;
+}
+
+.frame-function {
+  font-weight: bold;
+}
+
+.frame-index {
+  font-weight: bold;
+  font-size: 11px;
+  color: #a5a5a5;
+}
+
+.active .frame-class {
+  color: #000;
+}
+.active .frame-file {
+  color: #000;
+}
+.active .frame-line {
+  color: #000;
+}
+
+.frame-file {
+  font-family: Source Code Pro, Monaco, Consolas, Lucida Console, monospace;
+  word-wrap: break-word;
+}
+.frame-file .editor-link {
+  color: #333333;
+}
+
+.frame-line {
+  font-weight: bold;
+  color: #a5a5a5;
+}
+.frame-line:before {
+  content: ":";
+}
+
+.frame-code {
+  padding: 20px;
+  background: #f0f0f0;
+  display: none;
+  border-left: 5px solid #eda31a;
+}
+.frame-code.active {
+  display: block;
+}
+.frame-code .frame-file {
+  background: #fff100;
+  color: black;
+  font-size: 11px;
+  padding: 10px 10px 5px 10px;
+}
+
+.code-block {
+  padding: 10px;
+  margin: 0;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.linenums {
+  margin: 0;
+  margin-left: 10px;
+}
+.linenums li {
+  color: #a5a5a5;
+}
+.linenums li.current {
+  background: rgba(255, 255, 255, 0.05);
+  padding-top: 4px;
+  padding-left: 1px;
+}
+.linenums li.current.active {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.frame-comments {
+  border-top: none;
+  padding: 5px;
+  font-size: 12px;
+  background: #404040;
+}
+.frame-comments.empty {
+  padding: 8px 15px;
+}
+.frame-comments.empty:before {
+  content: "No comments for this stack frame.";
+  font-style: italic;
+  color: #828282;
+}
+
+.frame-comment {
+  padding: 10px 5px;
+  color: #d2d2d2;
+}
+.frame-comment a {
+  color: #bee9ea;
+  font-weight: bold;
+  text-decoration: none;
+}
+.frame-comment a:hover {
+  color: #4bb1b1;
+}
+.frame-comment:not(':last-child') {
+  border-bottom: 1px dotted rgba(0, 0, 0, 0.3);
+}
+
+.frame-comment-context {
+  font-size: 10px;
+  font-weight: bold;
+  color: #86d2b6;
+}
+
+.data-table {
+  width: 100%;
+  margin: 10px 0;
+}
+.data-table tbody {
+  font: 12px/1.5 Source Code Pro, Monaco, Consolas, Lucida Console, monospace;
+}
+.data-table thead {
+  display: none;
+}
+.data-table tr {
+  padding: 5px 0;
+}
+.data-table td:first-child {
+  width: 20%;
+  min-width: 130px;
+  overflow: hidden;
+  font-weight: bold;
+  color: #463c54;
+  padding-right: 5px;
+}
+.data-table td:last-child {
+  width: 80%;
+  word-break: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+.data-table .empty {
+  color: #999999;
+  font-style: italic;
+}
+
+.handler {
+  padding: 10px;
+  font: 12px/1.5 Source Code Pro, Monaco, Consolas, Lucida Console, monospace;
+}
+.handler.active:nth-child(even) {
+  color: white;
+  background: #272727;
+}
+.handler.active:nth-child(odd) {
+  color: white;
+  background: #373837;
+}
+
+pre .str {
+  color: #d1e751;
+}
+pre .kwd {
+  color: #d65152;
+  font-weight: bold;
+}
+pre .com {
+  color: #555555;
+  font-weight: bold;
+}
+pre .typ {
+  color: white;
+}
+pre .lit {
+  color: #e94d4d;
+}
+pre .pun {
+  color: #93a1a1;
+  font-weight: bold;
+}
+pre .pln {
+  color: #cccccc;
+}
+pre .tag {
+  color: #db613b;
+}
+pre .htm {
+  color: plum;
+}
+pre .xsl {
+  color: #d0a0d0;
+}
+pre .atn {
+  color: white;
+  font-weight: normal;
+}
+pre .atv {
+  color: #e3b446;
+}
+pre .dec {
+  color: white;
+}
+pre.prettyprint {
+  white-space: pre-wrap;
+}
+pre.prettyprint a {
+  text-decoration: none;
+}
+
+code .str {
+  color: #d1e751;
+}
+code .kwd {
+  color: #fff100;
+  font-weight: bold;
+}
+code .com {
+  color: #555555;
+  font-weight: bold;
+}
+code .typ {
+  color: white;
+}
+code .lit {
+  color: #e94d4d;
+}
+code .pun {
+  color: #93a1a1;
+  font-weight: bold;
+}
+code .pln {
+  color: #cccccc;
+}
+code .tag {
+  color: #db613b;
+}
+code .htm {
+  color: plum;
+}
+code .xsl {
+  color: #d0a0d0;
+}
+code .atn {
+  color: white;
+  font-weight: normal;
+}
+code .atv {
+  color: #e3b446;
+}
+code .dec {
+  color: white;
+}
+code.prettyprint a {
+  text-decoration: none;
+}
+
+.data-table-container label {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff100;
+  display: block;
+  margin: 10px 0 5px;
+  padding: 10px 0 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.help button {
+    cursor: help;
+    height:   28px;
+    float: right;
+    margin-left: 10px;
+}
+
+.help button:hover + #help-overlay {
+    display: block;
+}
+
+#help-overlay {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(54, 54, 54, 0.5);
+}
+
+#help-overlay label {
+    color: #4288ce;
+    font-weight: bold;
+}
+
+#help-overlay div {
+    width: 200px;
+    padding: 5px;
+    color: #463c54;
+    background-color: white;
+    border-radius: 10px;
+}
+
+#help-clipboard {
+    position: absolute;
+    right: 30px;
+    top: 90px;
+}
+
+#help-framestack {
+    position: absolute;
+    left: 200px;
+    top: 50px;
+}
+
+#help-exc-message {
+    position: absolute;
+    left: 65%;
+    top: 10px;
+}
+
+#help-code {
+    position: absolute;
+    right: 30px;
+    top: 250px;
+}
+
+#help-request {
+    position: absolute;
+    right: 30px;
+    top: 450px;
+}
+
+/* inspired by githubs kbd styles */
+kbd {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #fcfcfc;
+    border-color: #ccc #ccc #bbb;
+    border-image: none;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 -1px 0 #bbb inset;
+    color: #555;
+    display: inline-block;
+    font-size: 11px;
+    line-height: 10px;
+    padding: 3px 5px;
+    vertical-align: middle;
+}
