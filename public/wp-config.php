@@ -17,3 +17,5 @@ require_once(ABSPATH . 'wp-settings.php');
 if (getenv('WP_MULTISITE') !== 'false' && defined('WP_INSTALL_PATH') && class_exists('Gwa\Wordpress\MultisiteDirectoryResolver')) {
     (new Gwa\Wordpress\MultisiteDirectoryResolver(WP_INSTALL_PATH))->init();
 }
+
+(new Gwa\Wordpress\DisableAutoUpdate\AutoUpdateHandler())->init();
