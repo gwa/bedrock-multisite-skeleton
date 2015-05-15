@@ -1,0 +1,27 @@
+sudo: false
+
+language: php
+
+php:
+  - 5.4
+  - 5.5
+  - 5.6
+  - 7.0
+  - hhvm
+
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: hhvm
+    - php: 7.0
+
+before_install:
+  - pyrus install pear/PHP_CodeSniffer
+  - phpenv rehash
+
+install:
+  - curl http://get.sensiolabs.org/php-cs-fixer.phar -o php-cs-fixer.phar
+
+script:
+  - php -n php-cs-fixer.phar fix -v --dry-run
+  - phpcs --standard=ruleset.xml --extensions=php --ignore=public/wp/,vendor/ -n -s .

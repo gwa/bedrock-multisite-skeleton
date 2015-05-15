@@ -1,0 +1,83 @@
+{
+  "name"       : "gwa/bedrock-multisite-skeleton",
+  "type"       : "project",
+  "license"    : "MIT",
+  "description": "A modern WordPress stack",
+  "homepage"   : "https://github.com/gwa/bedrock-multisite-skeleton/",
+  "authors"    : [{
+      "name"    : "Scott Walkinshaw",
+      "email"   : "scott.walkinshaw@gmail.com",
+      "homepage": "https://github.com/swalkinshaw"
+    },
+    {
+      "name"    : "Ben Word",
+      "email"   : "ben@benword.com",
+      "homepage": "https://github.com/retlehs"
+    },
+    {
+      "name"    : "Great White Ark",
+      "homepage": "http://www.greatwhiteark.com"
+  }],
+  "keywords": [
+    "bedrock", "roots", "wordpress", "stack", "composer", "vagrant", "wp", "multisite", "twig", "developer", "dev"
+  ],
+  "support": {
+    "issues"                                  : "https://github.com/gwa/bedrock-multisite-skeleton/issues"
+  },
+  "config": {
+    "preferred-install"                       : "dist",
+    "generate-salts"                          : true
+  },
+  "autoload": {
+    "psr-4": {
+      "Roots\\Bedrock\\Installer\\"           : "scripts/",
+      "Gwa\\Wordpress\\ErrorHandler\\"        : "scripts/Gwa/ErrorHandler/"
+    }
+  },
+  "scripts": {
+    "post-root-package-install"               : ["Roots\\Bedrock\\Installer::addSalts"]
+  },
+  "repositories": [{
+      "type": "composer",
+      "url" : "http://wpackagist.org"
+  }, {
+      "type": "composer",
+      "url": "http://languages.koodimonni.fi"
+  }],
+  "require": {
+    "php"                                     : ">=5.4",
+    "composer/installers"                     : "~1.0.12",
+    "gwa/multisite-directory-resolver"        : "~0.0.5",
+    "johnpbloch/wordpress"                    : "4.2.2",
+
+    "koodimonni/composer-dropin-installer"    : "0.2.4",
+    "koodimonni-language/de_de"               : "4.2.2",
+    "koodimonni-language/en_gb"               : "4.2.2",
+
+    "wpackagist-plugin/multisite-enhancements": "~1.1.0"
+  },
+  "require-dev": {
+    "vlucas/phpdotenv"                        : "~1.1.0",
+    "filp/whoops"                             : "~1.1.5",
+    "fabpot/php-cs-fixer"                     : "~1.8",
+
+    "wpackagist-plugin/debug-bar"             : "~0.8.2",
+    "wpackagist-plugin/debug-bar-post-types"  : "~1.2",
+    "wpackagist-plugin/developer"             : "~1.2.5",
+    "wpackagist-plugin/log-deprecated-notices": "~0.3",
+    "roots/wp-stage-switcher"                 : "~1.0.3"
+  },
+  "extra": {
+    "installer-paths": {
+      "public/app/mu-plugins/{$name}/"        : ["type:wordpress-muplugin"],
+      "public/app/plugins/{$name}/"           : ["type:wordpress-plugin", "type:wordpress-dropin"],
+      "public/app/themes/{$name}/"            : ["type:wordpress-theme"],
+      "public/app/languages/"                 : ["type:wordpress-language"],
+      "public/app/languages/plugins/"         : ["type:wordpress-plugin-language"],
+      "public/app/languages/themes/"          : ["type:wordpress-theme-language"]
+    },
+    "wordpress-install-dir"                   : "public/wp"
+  },
+  "minimum-stability"                         : "dev",
+  "prefer-stable"                             : true
+}
