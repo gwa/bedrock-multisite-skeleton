@@ -69,11 +69,9 @@ class AutoUpdateHandler
         $urlData = parse_url($url);
 
         /* block request */
-        if (
-            false !== stripos($host, 'api.wordpress.org') && (
-                false !== stripos($urlData['path'], 'update-check') ||
-                false !== stripos($urlData['path'], 'browse-happy')
-            )) {
+        $path =  (false !== stripos($urlData['path'], 'update-check') || false !== stripos($urlData['path'], 'browse-happy'));
+
+        if (false !== stripos($host, 'api.wordpress.org') && $path) {
             return true;
         }
 
