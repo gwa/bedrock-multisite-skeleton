@@ -8,7 +8,12 @@ $finder = Symfony\CS\Finder\DefaultFinder::create()
     ->exclude('.travis.yml')
     ->exclude('.php_cs')
     ->exclude('tests')
-    ->exclude('public')
+    ->exclude('wp')
+    ->exclude('languages')
+    ->exclude('plugins')
+    ->exclude('themes')
+    ->exclude('upgrade')
+    ->exclude('uploads')
     ->in(__DIR__);
 
 return Symfony\CS\Config\Config::create()

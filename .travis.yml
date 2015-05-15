@@ -21,4 +21,3 @@ before_install:
 script:
   - php -n php-cs-fixer.phar fix -v --dry-run
   - phpcs --standard=ruleset.xml --extensions=php --ignore=public/wp/,vendor/ -n -s .
-  - vendor/bin/phpunit

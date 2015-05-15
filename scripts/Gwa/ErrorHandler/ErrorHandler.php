@@ -102,7 +102,7 @@ class ErrorHandler
     /**
      * @return bool
      */
-    public function is_debug()
+    public function isDebug()
     {
         return defined('WP_DEBUG') && WP_DEBUG;
     }
@@ -110,14 +110,14 @@ class ErrorHandler
     /**
      * @return bool
      */
-    public function is_debug_display()
+    public function isDebugDisplay()
     {
         return defined('WP_DEBUG_DISPLAY') && false !== WP_DEBUG_DISPLAY;
     }
 
     public function run()
     {
-        if (!$this->is_debug() || !$this->is_debug_display()) {
+        if (!$this->isDebug() || !$this->isDebugDisplay()) {
             return;
         }
 
