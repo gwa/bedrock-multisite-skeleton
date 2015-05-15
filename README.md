@@ -3,7 +3,7 @@ Bedrock Multisite Skeleton
 
 A [WordPress Bedrock](https://github.com/roots/bedrock) multisite skeleton. This project is trying to simplify the way we're setting up a new WordPress project. [Don't repeat yourself](http://en.wikipedia.org/wiki/Don't_repeat_yourself).
 
-# [Bedrock](https://github.com/gwa/bedrock-multisite-skeleton/)
+#
 [![Build Status](https://travis-ci.org/gwa/bedrock-multisite-skeleton.svg)](https://travis-ci.org/gwa/bedrock-multisite-skeleton)
 [![License](https://img.shields.io/packagist/l/wordplate/wordplate.svg?style=flat)](https://packagist.org/packages/wordplate/wordplate)
 
