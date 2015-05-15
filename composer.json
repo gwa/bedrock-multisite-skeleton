@@ -59,6 +59,7 @@
   "require-dev": {
     "vlucas/phpdotenv"                        : "~1.1.0",
     "filp/whoops"                             : "~1.1.5",
+    "fabpot/php-cs-fixer"                     : "~1.8",
 
     "wpackagist-plugin/debug-bar"             : "~0.8.2",
     "wpackagist-plugin/debug-bar-post-types"  : "~1.2",

@@ -11,7 +11,9 @@
 
 namespace Roots\Bedrock;
 
-if (!is_blog_installed()) { return; }
+if (!is_blog_installed()) {
+    return;
+}
 
 class Autoloader {
     private static $cache; // Stores our plugin cache and site option.
@@ -112,10 +114,12 @@ class Autoloader {
      * to deactivate or uninstall.
      */
     private function pluginHooks() {
-        if (!is_array(self::$activated)) { return; }
+        if (!is_array(self::$activated)) {
+            return;
+        }
 
         foreach (self::$activated as $plugin_file => $plugin_info) {
-          do_action('activate_' . $plugin_file);
+            do_action('activate_' . $plugin_file);
         }
     }
 
@@ -124,10 +128,10 @@ class Autoloader {
      */
     private function validatePlugins() {
         foreach (self::$cache['plugins'] as $plugin_file => $plugin_info) {
-          if (!file_exists(WPMU_PLUGIN_DIR . '/' . $plugin_file)) {
-            $this->updateCache();
-            break;
-          }
+            if (!file_exists(WPMU_PLUGIN_DIR . '/' . $plugin_file)) {
+                $this->updateCache();
+                break;
+            }
         }
     }
 
@@ -137,7 +141,7 @@ class Autoloader {
      */
     private function countPlugins() {
         if (isset(self::$count)) {
-          return self::$count;
+            return self::$count;
         }
 
         $count = count(glob(WPMU_PLUGIN_DIR . '/*/', GLOB_ONLYDIR | GLOB_NOSORT));

@@ -19,28 +19,28 @@ class Installer
 
     public static function addSalts(Event $event)
     {
-        $root = dirname(dirname(dirname(__DIR__)));
+        $root     = dirname(dirname(dirname(__DIR__)));
         $composer = $event->getComposer();
-        $io = $event->getIO();
+        $io       = $event->getIO();
 
         if (!$io->isInteractive()) {
-            $generate_salts = $composer->getConfig()->get('generate-salts');
+            $generateSalts = $composer->getConfig()->get('generate-salts');
         } else {
-            $generate_salts = $io->askConfirmation('<info>Generate salts and append to .env file?</info> [<comment>Y,n</comment>]? ', true);
+            $generateSalts = $io->askConfirmation('<info>Generate salts and append to .env file?</info> [<comment>Y,n</comment>]? ', true);
         }
 
-        if (!$generate_salts) {
+        if (!$generateSalts) {
             return 1;
         }
 
         $salts = array_map(function ($key) {
-      return sprintf("%s='%s'", $key, Installer::generateSalt());
-    }, self::$KEYS);
+            return sprintf("%s='%s'", $key, Installer::generateSalt());
+        }, self::$KEYS);
 
-        $env_file = "{$root}/.env";
+        $envFile = "{$root}/.env";
 
-        if (copy("{$root}/.env.example", $env_file)) {
-            file_put_contents($env_file, implode($salts, "\n"), FILE_APPEND | LOCK_EX);
+        if (copy("{$root}/.env.example", $envFile)) {
+            file_put_contents($envFile, implode($salts, "\n"), FILE_APPEND | LOCK_EX);
         } else {
             $io->write("<error>An error occured while copying your .env file</error>");
             return 1;
