@@ -30,15 +30,15 @@ class ErrorHandler
             '$wp'       => function () {
                 global $wp;
 
-                if (!$wp instanceof \WP ) {
+                if (!$wp instanceof \WP) {
                     return array();
                 }
 
-                $output = get_object_vars($wp );
+                $output = get_object_vars($wp);
                 unset($output['private_query_vars']);
                 unset($output['public_query_vars']);
 
-                return array_filter($output );
+                return array_filter($output);
             },
             '$wp_query' => function () {
                 global $wp_query;
@@ -102,18 +102,21 @@ class ErrorHandler
     /**
      * @return bool
      */
-    public function is_debug() {
-        return defined('WP_DEBUG' ) && WP_DEBUG;
+    public function is_debug()
+    {
+        return defined('WP_DEBUG') && WP_DEBUG;
     }
 
     /**
      * @return bool
      */
-    public function is_debug_display() {
-        return defined('WP_DEBUG_DISPLAY' ) && false !== WP_DEBUG_DISPLAY;
+    public function is_debug_display()
+    {
+        return defined('WP_DEBUG_DISPLAY') && false !== WP_DEBUG_DISPLAY;
     }
 
-    public function run() {
+    public function run()
+    {
         if (!$this->is_debug() || !$this->is_debug_display()) {
             return;
         }

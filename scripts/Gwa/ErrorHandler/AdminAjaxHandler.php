@@ -28,24 +28,26 @@ class AdminAjaxHandler extends JsonResponseHandler
     /**
      * @return bool
      */
-    protected function isAjaxRequest() {
-        return defined( 'DOING_AJAX' ) && DOING_AJAX;
+    protected function isAjaxRequest()
+    {
+        return defined('DOING_AJAX') && DOING_AJAX;
     }
 
     /**
      * @return int
      */
-    public function handle() {
+    public function handle()
+    {
         if ($this->onlyForAjaxRequests() && ! $this->isAjaxRequest()) {
             return Handler::DONE;
         }
 
         $response = [
             'success' => false,
-            'data'    => Formatter::formatExceptionAsDataArray( $this->getInspector(), $this->addTraceToOutput() ),
+            'data'    => Formatter::formatExceptionAsDataArray($this->getInspector(), $this->addTraceToOutput()),
         ];
 
-        if (Misc::canSendHeaders() ) {
+        if (Misc::canSendHeaders()) {
             header('Content-Type: application/json; charset='.get_option('blog_charset'));
         }
 
