@@ -2,7 +2,7 @@
 namespace Gwa\Wordpress\ErrorHandler;
 
 /**
- * Wordpress Multisite fixer.
+ * A modern WordPress stack.
  *
  * @author      Daniel Bannert <bannert@greatwhiteark.com>
  * @copyright   2015 Great White Ark
@@ -16,7 +16,7 @@ use Whoops\Handler\PrettyPageHandler;
 use Whoops\Run;
 
 /**
- * Handler.
+ * ErrorHandler.
  *
  * @author  GWA
  */
@@ -31,7 +31,7 @@ class ErrorHandler
                 global $wp;
 
                 if (!$wp instanceof \WP) {
-                    return array();
+                    return [];
                 }
 
                 $output = get_object_vars($wp);
@@ -44,7 +44,7 @@ class ErrorHandler
                 global $wp_query;
 
                 if (!$wp_query instanceof \WP_Query) {
-                    return array();
+                    return [];
                 }
 
                 $output               = get_object_vars($wp_query);
@@ -59,7 +59,7 @@ class ErrorHandler
                 $post = get_post();
 
                 if (!$post instanceof \WP_Post) {
-                    return array();
+                    return [];
                 }
 
                 return get_object_vars($post);
