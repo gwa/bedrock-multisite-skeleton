@@ -41,7 +41,9 @@ Please note that this also works with themes and WordPress multi-site plugins.
 
 ## Installation
 
-1. `php composer create-project gwa/bedrock-multisite-skeleton`
+Install Bedrock Multisite by issuing the Composer `create-project` command in your terminal:
+
+1. `composer create-project gwa/bedrock-multisite-skeleton`
 2. Copy `.env.example` to `.env` and update environment variables:
   * `DB_NAME` - Database name
   * `DB_USER` - Database user
@@ -51,6 +53,8 @@ Please note that this also works with themes and WordPress multi-site plugins.
   * `WP_HOME` - Full URL to WordPress home (http://example.com)
   * `WP_SITEURL` - Full URL to WordPress including subdirectory (http://example.com/wp)
 3. Access WP admin at `http://example.com/wp/wp-admin`
+
+Read more about setting up `Bedrock Multisite` on our [installation documentation](https://github.com/gwa/bedrock-multisite-skeleton/wiki/Installation) page.
 
 ## Deploys
 
