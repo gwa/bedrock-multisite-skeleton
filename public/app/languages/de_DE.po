@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-05-02 22:22:49+0000\n"
+"PO-Revision-Date: 2015-05-17 18:19:04+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -126,7 +126,11 @@ msgstr[1] "%1$s Antworten zu %2$s"
 msgid "Your theme supports one menu. Select which menu you would like to use."
 msgstr "Dein Theme unterstützt ein Menü. Wähle aus, welches Menü genutzt werden soll."
 
-#: wp-includes/taxonomy.php:4173
+#: wp-includes/user.php:153
+msgid "<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href=\"%2$s\">Lost your password?</a>"
+msgstr "<strong>FEHLER</strong>: Das Passwort, das du für den Benutzernamen <strong>%1$s</strong> eingegeben hast, stimmt nicht. <a href=\"%2$s\">Hast du dein Passwort vergessen?</a> "
+
+#: wp-includes/taxonomy.php:4169
 msgid "Could not split shared term."
 msgstr "Der gemeinsam genutzte Begriff konnte nicht aufgeteilt werden."
 
@@ -155,10 +159,6 @@ msgstr "Zu diesem Elternteil gibt es bereits einen Begriff mit dieser Bezeichnun
 #: wp-includes/script-loader.php:400
 msgid "Site Preview"
 msgstr "Vorschau der Website"
-
-#: wp-includes/user.php:153
-msgid "<strong>ERROR</strong>: The password you entered for the username <strong>%1$s</strong> is incorrect. <a href=\"%2$s\">Lost your password?</a>"
-msgstr "<strong>FEHLER</strong>: Das Passwort, dass du für den Benutzernamen <strong>%1$s</strong> eingegeben hast, stimmt nicht. <a href=\"%2$s\">Hast du dein Passwort vergessen?</a> "
 
 #: wp-includes/user.php:137
 msgid "<strong>ERROR</strong>: Invalid username. <a href=\"%s\">Lost your password?</a>"
@@ -736,7 +736,7 @@ msgstr "(ohne Bezeichnung)"
 
 #. translators: %s: taxonomy label, %l: list of terms formatted as per
 #. $term_template
-#: wp-includes/taxonomy.php:4483
+#: wp-includes/taxonomy.php:4479
 msgid "%s: %l."
 msgstr "%s: %l."
 
@@ -4898,7 +4898,7 @@ msgid "Invalid Taxonomy"
 msgstr "Ungültige Taxonomie"
 
 #: wp-includes/taxonomy.php:1318 wp-includes/taxonomy.php:3382
-#: wp-includes/taxonomy.php:4351
+#: wp-includes/taxonomy.php:4347
 msgid "Empty Term"
 msgstr "Leerer Ausdruck"
 
@@ -4921,7 +4921,7 @@ msgstr "Der Begriff konnte nicht in die Datenbank eingefügt werden"
 msgid "The slug &#8220;%s&#8221; is already in use by another term"
 msgstr "Die Titelform &#8220;%s&#8221; wird bereits verwendet"
 
-#: wp-includes/taxonomy.php:4554
+#: wp-includes/taxonomy.php:4550
 msgid "Invalid object ID"
 msgstr "Ungültige Objekt-ID"
 
@@ -5592,7 +5592,7 @@ msgstr "Nicht genehmigt"
 msgid "Duplicate comment detected; it looks as though you&#8217;ve already said that!"
 msgstr "Doppelter Kommentar wurde entdeckt. Es sieht stark danach aus, dass du das schon einmal gesagt hast!"
 
-#: wp-includes/comment.php:2368
+#: wp-includes/comment.php:2375
 msgid "Could not update comment status"
 msgstr "Der Kommentarstatus konnte nicht aktualisiert werden"
 
@@ -5915,7 +5915,7 @@ msgstr "<strong>Fehler:</strong> Bitte gib deine E-Mail-Adresse ein."
 msgid "<strong>ERROR</strong>: The email address isn&#8217;t correct."
 msgstr "<strong>Fehler:</strong> Die E-Mail-Adresse ist ungültig."
 
-#: wp-includes/wp-db.php:2949
+#: wp-includes/wp-db.php:2991
 msgid "<strong>ERROR</strong>: WordPress %1$s requires MySQL %2$s or higher"
 msgstr "<strong>Fehler:</strong> WordPress %1$s benötigt mindestens MySQL %2$s"
 
