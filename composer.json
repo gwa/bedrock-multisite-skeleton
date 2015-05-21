@@ -29,13 +29,16 @@
     "generate-salts"                          : true
   },
   "autoload": {
+    "psr-0": {
+      "Roots\\Bedrock\\Installer"             : "scripts"
+    },
     "psr-4": {
-      "Roots\\Bedrock\\Installer\\"           : "scripts/",
       "Gwa\\Wordpress\\ErrorHandler\\"        : "scripts/Gwa/ErrorHandler/",
       "Gwa\\Wordpress\\DisableAutoUpdate\\"   : "scripts/Gwa/DisableAutoUpdate/"
     }
   },
   "scripts": {
+    "post-install-cmd"                        : ["Roots\\Bedrock\\Installer::addSalts"],
     "post-root-package-install"               : ["Roots\\Bedrock\\Installer::addSalts"]
   },
   "repositories": [{
