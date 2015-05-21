@@ -28,7 +28,7 @@ Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](htt
 We are using [WordPress Packagist](http://wpackagist.org/) for plugins. To add a plugin from the [WordPress Plugin Directory](https://wordpress.org/plugins/) add the to the required array in the [composer.json](composer.json) file. Specify them with `wpackagist-plugin` following by the plugin slug name. Example below.
 
 ```json
-"wpackagist-plugin/plugin-name": "~1.0"
+"wpackagist-plugin/plugin-name": "~1.0.1"
 ```
 
 Please note that this also works with themes and WordPress multi-site plugins.
