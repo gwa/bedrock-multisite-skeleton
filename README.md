@@ -5,7 +5,6 @@ A [WordPress Bedrock multisite](https://github.com/gwa/bedrock-multisite-skeleto
 
 #
 [![Build Status](https://travis-ci.org/gwa/bedrock-multisite-skeleton.svg)](https://travis-ci.org/gwa/bedrock-multisite-skeleton)
-[![License](https://img.shields.io/packagist/l/wordplate/wordplate.svg?style=flat)](https://packagist.org/packages/wordplate/wordplate)
 
 Much of the philosophy behind Bedrock is inspired by the [Twelve-Factor App](http://12factor.net/) methodology including the [WordPress specific version](https://roots.io/twelve-factor-wordpress/).
 
