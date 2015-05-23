@@ -38,7 +38,6 @@
     }
   },
   "scripts": {
-    "post-install-cmd"                        : ["Roots\\Bedrock\\Installer::addSalts"],
     "post-root-package-install"               : ["Roots\\Bedrock\\Installer::addSalts"]
   },
   "repositories": [{
