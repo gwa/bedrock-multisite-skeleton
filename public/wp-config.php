@@ -12,10 +12,14 @@ require_once(ABSPATH . 'wp-settings.php');
 /**
  * Whoops Wordpress ErrorHandler
  */
-(new Gwa\Wordpress\ErrorHandler\ErrorHandler())->run();
+if (class_exists('Whoops\Run')) {
+    (new Gwa\Wordpress\ErrorHandler\ErrorHandler())->run();
+}
 
 if (getenv('WP_MULTISITE') !== 'false' && defined('WP_INSTALL_PATH') && class_exists('Gwa\Wordpress\MultisiteDirectoryResolver')) {
     (new Gwa\Wordpress\MultisiteDirectoryResolver(WP_INSTALL_PATH))->init();
 }
 
-(new Gwa\Wordpress\DisableAutoUpdate\AutoUpdateHandler())->init();
+if (getenv('WP_AUTO_UPDATE') === 'false') {
+    (new Gwa\Wordpress\DisableAutoUpdate\AutoUpdateHandler())->init();
+}
