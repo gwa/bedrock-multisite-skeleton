@@ -20,6 +20,6 @@ if (getenv('WP_MULTISITE') !== 'false' && defined('WP_INSTALL_PATH') && class_ex
     (new Gwa\Wordpress\MultisiteDirectoryResolver(WP_INSTALL_PATH))->init();
 }
 
-if (getenv('WP_AUTO_UPDATE_DISABLE') === 'false') {
+if (getenv('WP_AUTO_UPDATE_DISABLE') === 'true') {
     (new Gwa\Wordpress\DisableAutoUpdate\AutoUpdateHandler())->init();
 }
