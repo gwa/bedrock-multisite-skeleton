@@ -13,7 +13,7 @@ namespace Gwa\Wordpress\DisableAutoUpdate;
  */
 
 /**
- * ErrorHandler.
+ * AutoUpdateHandler.
  *
  * @author  GWA
  */

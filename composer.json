@@ -64,6 +64,8 @@
     "filp/whoops"                             : "~1.1.5",
     "fabpot/php-cs-fixer"                     : "~1.8",
 
+    "10up/wp_mock"                            : "dev-master",
+
     "wpackagist-plugin/debug-bar"             : "~0.8.2",
     "wpackagist-plugin/debug-bar-post-types"  : "~1.2",
     "wpackagist-plugin/developer"             : "~1.2.5",
