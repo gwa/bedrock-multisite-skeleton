@@ -33,7 +33,6 @@
       "Roots\\Bedrock\\Installer"             : "scripts"
     },
     "psr-4": {
-      "Gwa\\Wordpress\\ErrorHandler\\"        : "scripts/Gwa/ErrorHandler/",
       "Gwa\\Wordpress\\DisableAutoUpdate\\"   : "scripts/Gwa/DisableAutoUpdate/"
     }
   },
@@ -61,7 +60,6 @@
   },
   "require-dev": {
     "vlucas/phpdotenv"                        : "~1.1.0",
-    "filp/whoops"                             : "~1.1.5",
     "fabpot/php-cs-fixer"                     : "~1.8",
 
     "10up/wp_mock"                            : "dev-master",
