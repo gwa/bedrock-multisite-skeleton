@@ -29,8 +29,13 @@ if (file_exists($envConfig)) {
 /**
  * URLs
  */
-define('WP_HOME', getenv('WP_HOME'));
-define('WP_SITEURL', getenv('WP_SITEURL'));
+if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false') {
+    define('WP_HOME', '//' . $_SERVER['HTTP_HOST'] . '/');
+    define('WP_SITEURL', '//' . $_SERVER['HTTP_HOST'] . '/wp/');
+} else {
+    define('WP_HOME', getenv('WP_HOME'));
+    define('WP_SITEURL', getenv('WP_SITEURL'));
+}
 
 /**
  * Custom Content Directory
