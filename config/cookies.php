@@ -7,7 +7,9 @@
 *
 * @link https://tommcfarlin.com/resolving-the-wordpress-multisite-redirect-loop/
 */
-define('ADMIN_COOKIE_PATH', '/');
-define('COOKIE_DOMAIN', '');
-define('COOKIEPATH', '');
-define('SITECOOKIEPATH', '');
+if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false') {
+    $domain = $_SERVER[ 'HTTP_HOST' ];
+
+    define('COOKIE_DOMAIN', $domain);
+    define('ADMIN_COOKIE_PATH', '/');
+}

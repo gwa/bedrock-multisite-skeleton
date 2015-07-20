@@ -1,15 +1,18 @@
 <?php
+
 $rootDir    = dirname(__DIR__);
 $webrootDir = $rootDir . '/public';
 
-/**
- * Use Dotenv to set required environment variables and load .env file in root
- */
-if (file_exists($rootDir . '/.env')) {
-    Dotenv::load($rootDir);
-}
+if (class_exists('Dotenv')) {
+    /**
+     * Use Dotenv to set required environment variables and load .env file in root
+     */
+    if (file_exists($rootDir . '/.env')) {
+        Dotenv::load($rootDir);
+    }
 
-Dotenv::required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
+    Dotenv::required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
+}
 
 /**
  * Set up our global environment constant and load its config first
@@ -26,8 +29,13 @@ if (file_exists($envConfig)) {
 /**
  * URLs
  */
-define('WP_HOME', getenv('WP_HOME'));
-define('WP_SITEURL', getenv('WP_SITEURL'));
+if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false') {
+    define('WP_HOME', '//' . $_SERVER['HTTP_HOST'] . '/');
+    define('WP_SITEURL', '//' . $_SERVER['HTTP_HOST'] . '/wp/');
+} else {
+    define('WP_HOME', getenv('WP_HOME'));
+    define('WP_SITEURL', getenv('WP_SITEURL'));
+}
 
 /**
  * Custom Content Directory
@@ -59,7 +67,7 @@ require_once('security.php');
  */
 define('WP_ALLOW_MULTISITE', (getenv('WP_MULTISITE') !== 'false' ? true : false));
 
-if (getenv('WP_MULTISITE') !== 'false' && getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false') {
+if (getenv('WP_MULTISITE') !== 'false' && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
     require_once __DIR__ . '/multisite.php';
     require_once('cookies.php');
 }
