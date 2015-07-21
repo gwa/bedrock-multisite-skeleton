@@ -49,7 +49,7 @@
   "require": {
     "php"                                     : ">=5.4",
     "composer/installers"                     : "~1.0.12",
-    "gwa/multisite-directory-resolver"        : "~0.0.5",
+    "gwa/multisite-directory-resolver"        : "~0.0.9",
     "johnpbloch/wordpress"                    : "4.2.2",
 
     "koodimonni/composer-dropin-installer"    : "0.2.4",
@@ -62,13 +62,9 @@
     "vlucas/phpdotenv"                        : "~1.1.0",
     "fabpot/php-cs-fixer"                     : "~1.8",
 
-    "10up/wp_mock"                            : "dev-master",
-
     "wpackagist-plugin/debug-bar"             : "~0.8.2",
     "wpackagist-plugin/debug-bar-post-types"  : "~1.2",
-    "wpackagist-plugin/developer"             : "~1.2.5",
-    "wpackagist-plugin/log-deprecated-notices": "~0.3",
-    "roots/wp-stage-switcher"                 : "~1.0.3"
+    "wpackagist-plugin/log-deprecated-notices": "~0.3"
   },
   "extra": {
     "installer-paths": {
