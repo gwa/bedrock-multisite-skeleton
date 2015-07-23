@@ -49,7 +49,7 @@
   "require": {
     "php"                                     : ">=5.4",
     "composer/installers"                     : "~1.0.12",
-    "gwa/multisite-directory-resolver"        : "~0.0.9",
+    "gwa/multisite-directory-resolver"        : "~2.0.0",
     "johnpbloch/wordpress"                    : "4.2.2",
 
     "koodimonni/composer-dropin-installer"    : "0.2.4",
