@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "fe10539e6d6cc4fe9f5ac266a2b686fc",
+    "hash": "9483ef1b9a3c65a95a9c02747d90293a",
     "packages": [
         {
             "name": "composer/installers",
@@ -103,16 +103,16 @@
         },
         {
             "name": "gwa/multisite-directory-resolver",
-            "version": "v0.0.9",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gwa/WpMultisiteDirectoryResolver.git",
-                "reference": "55a85b1287e97183f3a288b0dca2ee6024fd7bab"
+                "reference": "9d92e197974f67d5947259239d5eeaa27f09f35b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gwa/WpMultisiteDirectoryResolver/zipball/55a85b1287e97183f3a288b0dca2ee6024fd7bab",
-                "reference": "55a85b1287e97183f3a288b0dca2ee6024fd7bab",
+                "url": "https://api.github.com/repos/gwa/WpMultisiteDirectoryResolver/zipball/9d92e197974f67d5947259239d5eeaa27f09f35b",
+                "reference": "9d92e197974f67d5947259239d5eeaa27f09f35b",
                 "shasum": ""
             },
             "require": {
@@ -150,7 +150,7 @@
                 "multisite",
                 "wordpress"
             ],
-            "time": "2015-07-20 21:05:35"
+            "time": "2015-07-23 12:14:19"
         },
         {
             "name": "johnpbloch/wordpress",
