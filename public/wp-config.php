@@ -17,7 +17,7 @@ if (
     getenv('WP_MULTISITE') === 'true' &&
     defined('WP_INSTALL_PATH') &&
     class_exists('Gwa\Wordpress\MultisiteResolverManager')
-    ) {
+) {
     if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') === 'true') {
         $type = MultisiteResolverManager::TYPE_SUBDOMAIN;
     } else {
