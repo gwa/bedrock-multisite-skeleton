@@ -20,8 +20,6 @@ if (getenv('WP_MULTISITE') === 'true' && defined('WP_INSTALL_PATH') && class_exi
         $type = MultisiteResolverManager::TYPE_FOLDER;
     }
 
-    var_dump($type);
-
     (new MultisiteResolverManager(WP_INSTALL_PATH, $type))->init();
 }
 
