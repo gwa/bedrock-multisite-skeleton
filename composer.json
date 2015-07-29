@@ -50,17 +50,17 @@
     "php"                                     : ">=5.4",
     "composer/installers"                     : "~1.0.12",
     "gwa/multisite-directory-resolver"        : "~2.0.0",
-    "johnpbloch/wordpress"                    : "4.2.2",
+    "johnpbloch/wordpress"                    : "4.2.3",
 
     "koodimonni/composer-dropin-installer"    : "0.2.4",
-    "koodimonni-language/de_de"               : "4.2.2",
-    "koodimonni-language/en_gb"               : "4.2.2",
+    "koodimonni-language/de_de"               : "4.2.3",
+    "koodimonni-language/en_gb"               : "4.2.3",
 
     "wpackagist-plugin/multisite-enhancements": "~1.1.0"
   },
   "require-dev": {
     "vlucas/phpdotenv"                        : "~1.1.0",
-    "fabpot/php-cs-fixer"                     : "~1.8",
+    "fabpot/php-cs-fixer"                     : "~1.10",
 
     "wpackagist-plugin/debug-bar"             : "~0.8.2",
     "wpackagist-plugin/debug-bar-post-types"  : "~1.2",

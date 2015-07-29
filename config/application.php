@@ -29,7 +29,7 @@ if (file_exists($envConfig)) {
 /**
  * URLs
  */
-if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false') {
+if (getenv('WP_MULTISITE') !== 'false' && getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false') {
     define('WP_HOME', '//'.$_SERVER['HTTP_HOST'].'/');
     define('WP_SITEURL', '//'.$_SERVER['HTTP_HOST'].'/wp/');
 } else {

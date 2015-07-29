@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "9483ef1b9a3c65a95a9c02747d90293a",
+    "hash": "f20080be2a5a8017f0278c87a91b0e01",
     "packages": [
         {
             "name": "composer/installers",
@@ -154,16 +154,16 @@
         },
         {
             "name": "johnpbloch/wordpress",
-            "version": "4.2.2",
+            "version": "4.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/johnpbloch/wordpress.git",
-                "reference": "998358f3b7a2c75caae11ff3c79e514951aac7f6"
+                "reference": "56525f7941a9835ae64deafcaff15cd52336e467"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/998358f3b7a2c75caae11ff3c79e514951aac7f6",
-                "reference": "998358f3b7a2c75caae11ff3c79e514951aac7f6",
+                "url": "https://api.github.com/repos/johnpbloch/wordpress/zipball/56525f7941a9835ae64deafcaff15cd52336e467",
+                "reference": "56525f7941a9835ae64deafcaff15cd52336e467",
                 "shasum": ""
             },
             "require": {
@@ -187,7 +187,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2015-05-07 01:46:09"
+            "time": "2015-07-23 11:16:08"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -239,15 +239,16 @@
         },
         {
             "name": "koodimonni-language/de_de",
-            "version": "4.2.2",
+            "version": "4.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/4.2.2/de_DE.zip",
+                "url": "https://downloads.wordpress.org/translation/core/4.2.3/de_DE.zip",
                 "reference": null,
                 "shasum": null
             },
             "require": {
                 "koodimonni-plugin-language/akismet-de_de": "*",
+                "koodimonni-plugin-language/bbpress-de_de": "*",
                 "koodimonni-plugin-language/woocommerce-de_de": "*",
                 "koodimonni-plugin-language/wordpress-importer-de_de": "*",
                 "koodimonni-theme-language/twentyeleven-de_de": "*",
@@ -270,10 +271,10 @@
         },
         {
             "name": "koodimonni-language/en_gb",
-            "version": "4.2.2",
+            "version": "4.2.3",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/core/4.2.2/en_GB.zip",
+                "url": "https://downloads.wordpress.org/translation/core/4.2.3/en_GB.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -337,6 +338,27 @@
                 "Wordpress",
                 "akismet",
                 "en_gb"
+            ]
+        },
+        {
+            "name": "koodimonni-plugin-language/bbpress-de_de",
+            "version": "2.5.8",
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/bbpress/2.5.8/de_DE.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "koodimonni/composer-dropin-installer": ">=0.2.3"
+            },
+            "type": "wordpress-language",
+            "description": "Wordpress bbpress translation for German - de_de",
+            "keywords": [
+                "Translation",
+                "Wordpress",
+                "bbpress",
+                "de_de"
             ]
         },
         {
@@ -446,10 +468,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentyfifteen-de_de",
-            "version": "1.1",
+            "version": "1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentyfifteen/1.1/de_DE.zip",
+                "url": "https://downloads.wordpress.org/translation/theme/twentyfifteen/1.2/de_DE.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -467,10 +489,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentyfifteen-en_gb",
-            "version": "1.1",
+            "version": "1.2",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentyfifteen/1.1/en_GB.zip",
+                "url": "https://downloads.wordpress.org/translation/theme/twentyfifteen/1.2/en_GB.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -614,10 +636,10 @@
         },
         {
             "name": "koodimonni-theme-language/twentytwelve-en_gb",
-            "version": "1.6",
+            "version": "1.7",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/theme/twentytwelve/1.6/en_GB.zip",
+                "url": "https://downloads.wordpress.org/translation/theme/twentytwelve/1.7/en_GB.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -696,16 +718,16 @@
     "packages-dev": [
         {
             "name": "fabpot/php-cs-fixer",
-            "version": "v1.9.1",
+            "version": "v1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "f2c2c5527113f346d77eb790e62395fe8de58c4f"
+                "reference": "8e21b4fb32c4618a425817d9f0daf3d57a9808d1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/f2c2c5527113f346d77eb790e62395fe8de58c4f",
-                "reference": "f2c2c5527113f346d77eb790e62395fe8de58c4f",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/8e21b4fb32c4618a425817d9f0daf3d57a9808d1",
+                "reference": "8e21b4fb32c4618a425817d9f0daf3d57a9808d1",
                 "shasum": ""
             },
             "require": {
@@ -746,7 +768,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2015-07-08 21:03:30"
+            "time": "2015-07-27 20:56:10"
         },
         {
             "name": "sebastian/diff",
