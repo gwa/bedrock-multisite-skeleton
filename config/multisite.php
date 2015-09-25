@@ -1,15 +1,11 @@
 <?php
-/*Multisite config*/
+defined('WP_INSTALL_PATH')            or define('WP_INSTALL_PATH', getenv('WP_INSTALL_PATH'));
 
-Dotenv::required(['WP_INSTALL_PATH', 'WP_MULTISITE_PATH_CURRENT_SITE', 'WP_MULTISITE_SUBDOMAIN_INSTALL', 'WP_MULTISITE_DOMAIN_CURRENT_SITE']);
+defined('MULTISITE')                  or define('MULTISITE', (getenv('WP_MULTISITE') !== 'false' ? true : false));
+defined('SUBDOMAIN_INSTALL')          or define('SUBDOMAIN_INSTALL', (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false' ? true : false));
 
-define('WP_INSTALL_PATH', getenv('WP_INSTALL_PATH'));
+defined('DOMAIN_CURRENT_SITE')        or define('DOMAIN_CURRENT_SITE', getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE'));
+defined('PATH_CURRENT_SITE')          or define('PATH_CURRENT_SITE', getenv('WP_MULTISITE_PATH_CURRENT_SITE'));
 
-define('MULTISITE', (getenv('WP_MULTISITE') !== 'false' ? true : false));
-define('SUBDOMAIN_INSTALL', (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false' ? true : false));
-
-define('DOMAIN_CURRENT_SITE', getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE'));
-define('PATH_CURRENT_SITE', getenv('WP_MULTISITE_PATH_CURRENT_SITE'));
-
-define('SITE_ID_CURRENT_SITE', 1);
-define('BLOG_ID_CURRENT_SITE', 1);
+defined('SITE_ID_CURRENT_SITE')       or define('SITE_ID_CURRENT_SITE', 1);
+defined('BLOG_ID_CURRENT_SITE')       or define('BLOG_ID_CURRENT_SITE', 1);

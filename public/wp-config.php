@@ -6,14 +6,13 @@
  * WP is hardcoded to look in its own directory or one directory up for wp-config.php.
  */
 require_once(dirname(__DIR__) . '/vendor/autoload.php');
-
 require_once(dirname(__DIR__) . '/config/application.php');
 require_once(ABSPATH . 'wp-settings.php');
 
 use Gwa\Wordpress\MultisiteResolverManager;
 use Gwa\Wordpress\MultisiteDirectoryResolver;
 
-if (getenv('WP_MULTISITE') === 'true' && defined('WP_INSTALL_PATH') && class_exists('Gwa\Wordpress\MultisiteResolverManager')) {
+if ((bool) getenv('WP_MULTISITE') && defined('WP_INSTALL_PATH') && class_exists('Gwa\Wordpress\MultisiteResolverManager')) {
     if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') === 'true') {
         $type = MultisiteResolverManager::TYPE_SUBDOMAIN;
     } else {
@@ -21,8 +20,4 @@ if (getenv('WP_MULTISITE') === 'true' && defined('WP_INSTALL_PATH') && class_exi
     }
 
     (new MultisiteResolverManager(WP_INSTALL_PATH, $type))->init();
-}
-
-if (getenv('WP_AUTO_UPDATE_DISABLE') === 'false') {
-    (new Gwa\Wordpress\DisableAutoUpdate\AutoUpdateHandler())->init();
 }

@@ -1,82 +1,63 @@
 <?php
+// Get path to parent directory
+//
+$rootDir = dirname(__DIR__);
+$domain = $_SERVER['HTTP_HOST'];
 
-$rootDir    = dirname(__DIR__);
-$webrootDir = $rootDir . '/public';
+// Load settings from .env file, if it exists
+//
+if (class_exists('Dotenv\Dotenv')) {
+    $dotenv = new \Dotenv\Dotenv($rootDir);
 
-if (class_exists('Dotenv')) {
-    /**
-     * Use Dotenv to set required environment variables and load .env file in root
-     */
     if (file_exists($rootDir . '/.env')) {
-        Dotenv::load($rootDir);
+        $dotenv->load();
     }
 
-    Dotenv::required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME', 'WP_SITEURL']);
+    $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME']);
+
+    if ((bool) getenv('GW_MULTISITE') && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
+        $dotenv->required(['WP_INSTALL_PATH', 'WP_MULTISITE_PATH_CURRENT_SITE', 'WP_MULTISITE_SUBDOMAIN_INSTALL', 'WP_MULTISITE_DOMAIN_CURRENT_SITE']);
+    }
 }
 
-/**
- * Set up our global environment constant and load its config first
- * Default: development
- */
-define('WP_ENV', getenv('WP_ENV') ?: 'development');
-
-$envConfig = __DIR__ . '/environments/' . WP_ENV . '.php';
-
+// Load environment files, if they exist
+//
+$envConfig = __DIR__ . '/environments/local.php';
 if (file_exists($envConfig)) {
     require_once $envConfig;
 }
 
-/**
- * URLs
- */
-if (getenv('WP_MULTISITE') !== 'false' && getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false') {
-    define('WP_HOME', '//'.$_SERVER['HTTP_HOST'].'/');
-    define('WP_SITEURL', '//'.$_SERVER['HTTP_HOST'].'/wp/');
-} else {
-    define('WP_HOME', getenv('WP_HOME'));
-    define('WP_SITEURL', getenv('WP_SITEURL'));
+$env = getenv('GW_ENV') ?: 'production';
+$envConfig = __DIR__ . '/environments/' . $env . '.php';
+if (file_exists($envConfig)) {
+    require_once $envConfig;
 }
 
-/**
- * Custom Content Directory
- */
-define('CONTENT_DIR', '/app');
-define('PLUGIN_DIR', $webrootDir.'/app/plugins/');
-define('WP_CONTENT_DIR', $webrootDir . CONTENT_DIR);
-define('WP_CONTENT_URL', WP_HOME . CONTENT_DIR);
+$envConfig = __DIR__ . '/environments/default.php';
+if (file_exists($envConfig)) {
+    require_once $envConfig;
+}
 
-/* Set the trash to less days to optimize WordPress. */
-define('EMPTY_TRASH_DAYS', getenv('EMPTY_TRASH_DAYS'));
+unset($env);
+unset($envConfig);
 
+// Settings files
+//
+require_once('paths.php');
 require_once('database.php');
-
-/* Specify the Number of Post Revisions. */
-define('WP_POST_REVISIONS', getenv('WP_POST_REVISIONS'));
-
-/**
- * Custom Settings
- */
-define('AUTOMATIC_UPDATER_DISABLED', true);
-define('DISABLE_WP_CRON', true);
-define('DISALLOW_FILE_EDIT', true);
-
 require_once('security.php');
 
-/**
- * Wordpress multisite
- */
-define('WP_ALLOW_MULTISITE', (getenv('WP_MULTISITE') !== 'false' ? true : false));
 
-if (getenv('WP_MULTISITE') !== 'false' && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
-    require_once __DIR__ . '/multisite.php';
+// Wordpress multisite
+//
+defined('WP_ALLOW_MULTISITE') or define('WP_ALLOW_MULTISITE', (bool) getenv('GW_MULTISITE'));
+
+if ((bool) getenv('GW_MULTISITE') && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
+    require_once('multisite.php');
     require_once('cookies.php');
 }
 
-require_once('theme.php');
+require_once('settings.php');
 
-/**
- * Bootstrap WordPress
- */
-if (!defined('ABSPATH')) {
-    define('ABSPATH', $webrootDir . '/wp/');
-}
+unset($rootDir);
+unset($domain);
