@@ -11,6 +11,7 @@ require_once(ABSPATH . 'wp-settings.php');
 
 use Gwa\Wordpress\MultisiteResolverManager;
 use Gwa\Wordpress\MultisiteDirectoryResolver;
+use Gwa\Wordpress\DisableAutoUpdate\DisableAutoUpdateHandler;
 
 if ((bool) getenv('WP_MULTISITE') && defined('WP_INSTALL_PATH') && class_exists('Gwa\Wordpress\MultisiteResolverManager')) {
     if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') === 'true') {
@@ -20,4 +21,8 @@ if ((bool) getenv('WP_MULTISITE') && defined('WP_INSTALL_PATH') && class_exists(
     }
 
     (new MultisiteResolverManager(WP_INSTALL_PATH, $type))->init();
+}
+
+if ((bool) getenv('GA_DISABLE_WP_AUTO_UPDATE')) {
+    (new DisableAutoUpdateHandler())->init();
 }
