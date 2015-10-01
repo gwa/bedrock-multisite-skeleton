@@ -1,5 +1,4 @@
 <?php
-
 /**
 * Cookie settings
 *
@@ -7,9 +6,7 @@
 *
 * @link https://tommcfarlin.com/resolving-the-wordpress-multisite-redirect-loop/
 */
-if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false') {
-    $domain = $_SERVER[ 'HTTP_HOST' ];
-
+if ((bool) getenv('WP_MULTISITE_SUBDOMAIN_INSTALL')) {
     define('COOKIE_DOMAIN', $domain);
     define('ADMIN_COOKIE_PATH', '/');
 }

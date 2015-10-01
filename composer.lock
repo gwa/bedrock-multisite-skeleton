@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0f8f0be96e73fba73dc544321aead5a3",
-    "content-hash": "a7bd6d8ca8496660b03f5f6b89ec5ba5",
+    "hash": "1ef11a86e8ea19444963f98397f78dcf",
+    "content-hash": "e7203e2540188f79db08dcf46ceefcdc",
     "packages": [
         {
             "name": "composer/installers",
@@ -1116,16 +1116,16 @@
         },
         {
             "name": "vlucas/phpdotenv",
-            "version": "v1.1.1",
+            "version": "v2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vlucas/phpdotenv.git",
-                "reference": "0cac554ce06277e33ddf9f0b7ade4b8bbf2af3fa"
+                "reference": "91064290f5b53a09bdff1b939d7f69fb0e7531b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/0cac554ce06277e33ddf9f0b7ade4b8bbf2af3fa",
-                "reference": "0cac554ce06277e33ddf9f0b7ade4b8bbf2af3fa",
+                "url": "https://api.github.com/repos/vlucas/phpdotenv/zipball/91064290f5b53a09bdff1b939d7f69fb0e7531b5",
+                "reference": "91064290f5b53a09bdff1b939d7f69fb0e7531b5",
                 "shasum": ""
             },
             "require": {
@@ -1136,8 +1136,8 @@
             },
             "type": "library",
             "autoload": {
-                "psr-0": {
-                    "Dotenv": "src/"
+                "psr-4": {
+                    "Dotenv\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
@@ -1158,7 +1158,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2015-05-30 15:59:26"
+            "time": "2015-05-30 16:15:01"
         },
         {
             "name": "wpackagist-plugin/debug-bar",
