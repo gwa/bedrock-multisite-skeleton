@@ -19,7 +19,7 @@ $contentDir = $rootDir . '/' . $webroot . '/' . $content;
 
 // Custom directory paths
 defined('WP_CONTENT_DIR') or define('WP_CONTENT_DIR', $contentDir);
-defined('WP_PLUGIN_DIR')  or define('WP_PLUGIN_DIR', $contentDir . '/plugins/');
+defined('WP_PLUGIN_DIR')  or define('WP_PLUGIN_DIR', $contentDir . '/plugins');
 
 defined('WP_CONTENT_URL') or define('WP_CONTENT_URL', WP_HOME . '/' . $content);
 
