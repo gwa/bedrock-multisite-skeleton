@@ -4,9 +4,65 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1ef11a86e8ea19444963f98397f78dcf",
-    "content-hash": "e7203e2540188f79db08dcf46ceefcdc",
+    "hash": "c2ab91e424c9c77c888b3f2e87162376",
     "packages": [
+        {
+            "name": "anolilab/wordpress-salt-generator",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/anolilab/wordpress-salt-generator.git",
+                "reference": "f5a95e22799e4cb748634d3f2ebcc3de86949cb9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/anolilab/wordpress-salt-generator/zipball/f5a95e22799e4cb748634d3f2ebcc3de86949cb9",
+                "reference": "f5a95e22799e4cb748634d3f2ebcc3de86949cb9",
+                "shasum": ""
+            },
+            "require": {
+                "ircmaxell/random-lib": "^1.1",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "~1.10",
+                "mockery/mockery": "~0.9.4",
+                "phpunit/phpunit": "~4.8.8",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Anolilab\\Wordpress\\SaltGenerator\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Bannert",
+                    "email": "d.bannert@anolilab.de",
+                    "homepage": "http://anolilab.de",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generates the salts for the Wordpress Composer projects.",
+            "homepage": "https://github.com/anolilab/wp-salt-generator",
+            "keywords": [
+                "composer",
+                "generator",
+                "salts",
+                "wordpress"
+            ],
+            "time": "2015-10-20 00:10:49"
+        },
         {
             "name": "composer/installers",
             "version": "v1.0.21",
@@ -103,6 +159,60 @@
             "time": "2015-02-18 17:17:01"
         },
         {
+            "name": "gwa/mockery-wp-bridge",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gwa/MockeryWpBridge.git",
+                "reference": "9e5ea6f35f1a27c50548b12895f9b63497088e3d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gwa/MockeryWpBridge/zipball/9e5ea6f35f1a27c50548b12895f9b63497088e3d",
+                "reference": "9e5ea6f35f1a27c50548b12895f9b63497088e3d",
+                "shasum": ""
+            },
+            "require": {
+                "mockery/mockery": "~0.9.4",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "~1.10",
+                "phpunit/phpunit": "~4.8.9",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gwa\\Wordpress\\MockeryWpBridge\\": "src/Gwa/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Great White Ark",
+                    "homepage": "http://www.greatwhiteark.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "MockeryWpBridge is a simple bridge to mock all wordpress function.",
+            "homepage": "https://github.com/gwa/MockeryWpBridge",
+            "keywords": [
+                "mock",
+                "mockery",
+                "wordpress"
+            ],
+            "time": "2015-10-01 08:57:32"
+        },
+        {
             "name": "gwa/multisite-directory-resolver",
             "version": "v2.0.0",
             "source": {
@@ -152,6 +262,202 @@
                 "wordpress"
             ],
             "time": "2015-07-23 12:14:19"
+        },
+        {
+            "name": "gwa/wp-disable-auto-update",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/gwa/wp-disable-auto-update.git",
+                "reference": "608d2c901178ae9f55c17535d2a592e7d74e17f1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/gwa/wp-disable-auto-update/zipball/608d2c901178ae9f55c17535d2a592e7d74e17f1",
+                "reference": "608d2c901178ae9f55c17535d2a592e7d74e17f1",
+                "shasum": ""
+            },
+            "require": {
+                "gwa/mockery-wp-bridge": "^1.1@dev",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "~1.10",
+                "mockery/mockery": "~0.9.4",
+                "phpunit/phpunit": "~4.8.8",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Gwa\\Wordpress\\DisableAutoUpdate\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniel Bannert",
+                    "email": "bannert@greatwhiteark.com",
+                    "homepage": "http://greatwhiteark.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Disable auto update info from wordpress.",
+            "homepage": "https://github.com/gwa/wp-disable-auto-update",
+            "keywords": [
+                "auto update",
+                "update",
+                "wordpress"
+            ],
+            "time": "2015-10-05 14:07:47"
+        },
+        {
+            "name": "hamcrest/hamcrest-php",
+            "version": "v1.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hamcrest/hamcrest-php.git",
+                "reference": "b37020aa976fa52d3de9aa904aa2522dc518f79c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hamcrest/hamcrest-php/zipball/b37020aa976fa52d3de9aa904aa2522dc518f79c",
+                "reference": "b37020aa976fa52d3de9aa904aa2522dc518f79c",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "replace": {
+                "cordoval/hamcrest-php": "*",
+                "davedevelopment/hamcrest-php": "*",
+                "kodova/hamcrest-php": "*"
+            },
+            "require-dev": {
+                "phpunit/php-file-iterator": "1.3.3",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "hamcrest"
+                ],
+                "files": [
+                    "hamcrest/Hamcrest.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "description": "This is the PHP port of Hamcrest Matchers",
+            "keywords": [
+                "test"
+            ],
+            "time": "2015-05-11 14:41:42"
+        },
+        {
+            "name": "ircmaxell/random-lib",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/RandomLib.git",
+                "reference": "13efa4368bb2ac88bb3b1459b487d907de4dbf7c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ircmaxell/RandomLib/zipball/13efa4368bb2ac88bb3b1459b487d907de4dbf7c",
+                "reference": "13efa4368bb2ac88bb3b1459b487d907de4dbf7c",
+                "shasum": ""
+            },
+            "require": {
+                "ircmaxell/security-lib": "1.0.*@dev",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.1.*",
+                "phpunit/phpunit": "3.7.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "RandomLib": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@ircmaxell.com",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A Library For Generating Secure Random Numbers",
+            "homepage": "https://github.com/ircmaxell/RandomLib",
+            "keywords": [
+                "cryptography",
+                "random",
+                "random-numbers",
+                "random-strings"
+            ],
+            "time": "2015-01-15 16:31:45"
+        },
+        {
+            "name": "ircmaxell/security-lib",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ircmaxell/SecurityLib.git",
+                "reference": "80934de3c482dcafb46b5756e59ebece082b6dc7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ircmaxell/SecurityLib/zipball/80934de3c482dcafb46b5756e59ebece082b6dc7",
+                "reference": "80934de3c482dcafb46b5756e59ebece082b6dc7",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "1.1.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "SecurityLib": "lib"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Ferrara",
+                    "email": "ircmaxell@ircmaxell.com",
+                    "homepage": "http://blog.ircmaxell.com"
+                }
+            ],
+            "description": "A Base Security Library",
+            "homepage": "https://github.com/ircmaxell/PHP-SecurityLib",
+            "time": "2013-04-30 18:00:34"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -301,10 +607,10 @@
         },
         {
             "name": "koodimonni-plugin-language/akismet-de_de",
-            "version": "3.1.4",
+            "version": "3.1.5",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/akismet/3.1.4/de_DE.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/akismet/3.1.5/de_DE.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -322,10 +628,10 @@
         },
         {
             "name": "koodimonni-plugin-language/akismet-en_gb",
-            "version": "3.1.4",
+            "version": "3.1.5",
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/translation/plugin/akismet/3.1.4/en_GB.zip",
+                "url": "https://downloads.wordpress.org/translation/plugin/akismet/3.1.5/en_GB.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -694,21 +1000,86 @@
             ],
             "description": "Do what the fuck you want with your composer packages aka. Composer Dropin installer. Install packages or part of packages into custom paths without overwriting existing stuff.",
             "time": "2015-01-04 10:24:12"
+        },
+        {
+            "name": "mockery/mockery",
+            "version": "0.9.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/padraic/mockery.git",
+                "reference": "70bba85e4aabc9449626651f48b9018ede04f86b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/padraic/mockery/zipball/70bba85e4aabc9449626651f48b9018ede04f86b",
+                "reference": "70bba85e4aabc9449626651f48b9018ede04f86b",
+                "shasum": ""
+            },
+            "require": {
+                "hamcrest/hamcrest-php": "~1.1",
+                "lib-pcre": ">=7.0",
+                "php": ">=5.3.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.9.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Mockery": "library/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Pádraic Brady",
+                    "email": "padraic.brady@gmail.com",
+                    "homepage": "http://blog.astrumfutura.com"
+                },
+                {
+                    "name": "Dave Marshall",
+                    "email": "dave.marshall@atstsolutions.co.uk",
+                    "homepage": "http://davedevelopment.co.uk"
+                }
+            ],
+            "description": "Mockery is a simple yet flexible PHP mock object framework for use in unit testing with PHPUnit, PHPSpec or any other testing framework. Its core goal is to offer a test double framework with a succinct API capable of clearly defining all possible object operations and interactions using a human readable Domain Specific Language (DSL). Designed as a drop in alternative to PHPUnit's phpunit-mock-objects library, Mockery is easy to integrate with PHPUnit and can operate alongside phpunit-mock-objects without the World ending.",
+            "homepage": "http://github.com/padraic/mockery",
+            "keywords": [
+                "BDD",
+                "TDD",
+                "library",
+                "mock",
+                "mock objects",
+                "mockery",
+                "stub",
+                "test",
+                "test double",
+                "testing"
+            ],
+            "time": "2015-04-02 19:54:00"
         }
     ],
     "packages-dev": [
         {
             "name": "fabpot/php-cs-fixer",
-            "version": "v1.10",
+            "version": "v1.10.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "8e21b4fb32c4618a425817d9f0daf3d57a9808d1"
+                "reference": "12dbcd1462f1e3a5a96c6c7398af26b28e092a8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/8e21b4fb32c4618a425817d9f0daf3d57a9808d1",
-                "reference": "8e21b4fb32c4618a425817d9f0daf3d57a9808d1",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/12dbcd1462f1e3a5a96c6c7398af26b28e092a8a",
+                "reference": "12dbcd1462f1e3a5a96c6c7398af26b28e092a8a",
                 "shasum": ""
             },
             "require": {
@@ -749,7 +1120,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-            "time": "2015-07-27 20:56:10"
+            "time": "2015-10-12 20:13:46"
         },
         {
             "name": "sebastian/diff",
