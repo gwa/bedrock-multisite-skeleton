@@ -66,14 +66,16 @@
   },
   "extra": {
     "installer-paths": {
-      "public/app/mu-plugins/{$name}/"        : ["type:wordpress-muplugin"],
-      "public/app/plugins/{$name}/"           : ["type:wordpress-plugin", "type:wordpress-dropin"],
-      "public/app/themes/{$name}/"            : ["type:wordpress-theme"],
-      "public/app/languages/"                 : ["type:wordpress-language"],
-      "public/app/languages/plugins/"         : ["type:wordpress-plugin-language"],
-      "public/app/languages/themes/"          : ["type:wordpress-theme-language"]
+      "public/app/mu-plugins/{$name}/"          : ["type:wordpress-muplugin"],
+      "public/app/plugins/{$name}/"             : ["type:wordpress-plugin", "type:wordpress-dropin"],
+      "public/app/themes/{$name}/"              : ["type:wordpress-theme"]
     },
-    "wordpress-install-dir"                   : "public/wp"
+    "dropin-paths": {
+      "public/app/languages/"                   : ["type:wordpress-language"],
+      "public/app/languages/plugins/"           : ["type:wordpress-plugin-language"],
+      "public/app/languages/themes/"            : ["type:wordpress-theme-language"]
+    },
+    "wordpress-install-dir"                     : "public/wp"
   },
   "minimum-stability"                         : "dev",
   "prefer-stable"                             : true
