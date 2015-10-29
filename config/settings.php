@@ -6,6 +6,6 @@ defined('DISABLE_WP_CRON')            or define('DISABLE_WP_CRON', true);
 defined('DISALLOW_FILE_EDIT')         or define('DISALLOW_FILE_EDIT', true);
 
 // set default theme
-if (getenv('GW_THEME') && is_dir(getenv(CONTENT_DIR) . '/themes/' . getenv('GW_THEME'))) {
+if (getenv('GW_THEME') && is_dir(getenv('CONTENT_DIR') . '/themes/' . getenv('GW_THEME'))) {
     define('WP_DEFAULT_THEME', getenv('GW_THEME'));
 }

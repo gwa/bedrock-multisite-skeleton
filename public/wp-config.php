@@ -23,6 +23,6 @@ if ((bool) getenv('WP_MULTISITE') && getenv('GW_WP_DIR') && class_exists('Gwa\Wo
     (new MultisiteResolverManager(getenv('GW_WP_DIR'), $type))->init();
 }
 
-if ((bool) getenv('GA_DISABLE_WP_AUTO_UPDATE')) {
+if ((bool) getenv('GW_DISABLE_WP_AUTO_UPDATE')) {
     (new DisableAutoUpdateHandler())->init();
 }
