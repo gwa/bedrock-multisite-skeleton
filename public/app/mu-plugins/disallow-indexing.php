@@ -9,6 +9,6 @@
  * License:      MIT License
  */
 
-if (GW_ENV !== 'production' && !is_admin()) {
+if (getenv('GW_ENV') !== 'production' && !is_admin()) {
     add_action('pre_option_blog_public', '__return_zero');
 }
