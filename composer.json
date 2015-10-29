@@ -39,7 +39,7 @@
       "url": "http://languages.koodimonni.fi"
   }],
   "require": {
-    "php"                                     : ">=5.4",
+    "php"                                     : ">=5.5",
     "composer/installers"                     : "~1.0.12",
     "gwa/wp-disable-auto-update"              : "^1.0.0",
     "johnpbloch/wordpress"                    : "4.3.1",
@@ -49,10 +49,10 @@
     "koodimonni-language/core-en_gb"          : "4.3.1",
 
     "gwa/multisite-directory-resolver"        : "~2.0.0",
+    "vlucas/phpdotenv"                        : "~2.0.1",
     "anolilab/wordpress-salt-generator"       : "^1.1.0"
   },
   "require-dev": {
-    "vlucas/phpdotenv"                        : "~2.0.1",
     "fabpot/php-cs-fixer"                     : "~1.10",
 
     "wpackagist-plugin/debug-bar"             : "~0.8.2",
