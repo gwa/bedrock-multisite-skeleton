@@ -15,8 +15,12 @@ if (class_exists('Dotenv\Dotenv')) {
 
     $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME']);
 
-    if ((bool) getenv('GW_MULTISITE') && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
-        $dotenv->required(['WP_INSTALL_PATH', 'WP_MULTISITE_PATH_CURRENT_SITE', 'WP_MULTISITE_SUBDOMAIN_INSTALL', 'WP_MULTISITE_DOMAIN_CURRENT_SITE']);
+    if ((bool) getenv('WP_MULTISITE') && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
+        $dotenv->required([
+            'WP_MULTISITE_PATH_CURRENT_SITE',
+            'WP_MULTISITE_SUBDOMAIN_INSTALL',
+            'WP_MULTISITE_DOMAIN_CURRENT_SITE'
+        ]);
     }
 }
 
@@ -50,11 +54,11 @@ require_once('security.php');
 
 // Wordpress multisite
 //
-defined('WP_ALLOW_MULTISITE') or define('WP_ALLOW_MULTISITE', (bool) getenv('GW_MULTISITE'));
+defined('WP_ALLOW_MULTISITE') or define('WP_ALLOW_MULTISITE', (bool) getenv('WP_MULTISITE'));
 
-if ((bool) getenv('GW_MULTISITE') && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
-    require_once('multisite.php');
+if ((bool) getenv('WP_MULTISITE') && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
     require_once('cookies.php');
+    require_once('multisite.php');
 }
 
 require_once('settings.php');

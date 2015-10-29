@@ -1,5 +1,4 @@
 <?php
-defined('WP_INSTALL_PATH')            or define('WP_INSTALL_PATH', getenv('WP_INSTALL_PATH'));
 
 defined('MULTISITE')                  or define('MULTISITE', (getenv('WP_MULTISITE') !== 'false' ? true : false));
 defined('SUBDOMAIN_INSTALL')          or define('SUBDOMAIN_INSTALL', (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false' ? true : false));

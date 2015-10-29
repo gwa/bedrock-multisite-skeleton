@@ -13,14 +13,14 @@ use Gwa\Wordpress\MultisiteResolverManager;
 use Gwa\Wordpress\MultisiteDirectoryResolver;
 use Gwa\Wordpress\DisableAutoUpdate\DisableAutoUpdateHandler;
 
-if ((bool) getenv('WP_MULTISITE') && defined('WP_INSTALL_PATH') && class_exists('Gwa\Wordpress\MultisiteResolverManager')) {
+if ((bool) getenv('WP_MULTISITE') && getenv('GW_WP_DIR') && class_exists('Gwa\Wordpress\MultisiteResolverManager')) {
     if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') === 'true') {
         $type = MultisiteResolverManager::TYPE_SUBDOMAIN;
     } else {
         $type = MultisiteResolverManager::TYPE_FOLDER;
     }
 
-    (new MultisiteResolverManager(WP_INSTALL_PATH, $type))->init();
+    (new MultisiteResolverManager(getenv('GW_WP_DIR'), $type))->init();
 }
 
 if ((bool) getenv('GA_DISABLE_WP_AUTO_UPDATE')) {
