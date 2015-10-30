@@ -50,7 +50,7 @@
 
     "gwa/multisite-directory-resolver"        : "~2.0.0",
     "vlucas/phpdotenv"                        : "~2.0.1",
-    "anolilab/wordpress-salt-generator"       : "^1.1.0"
+    "anolilab/wordpress-salt-generator"       : "^1.2.0"
   },
   "require-dev": {
     "fabpot/php-cs-fixer"                     : "~1.10",

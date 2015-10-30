@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "05206eac6e28f670f8225cb8a17bec2e",
-    "content-hash": "10dcc54cf92bdd5f84945bb43ef4ed6d",
+    "hash": "98b2b0e4288e1716ade59540275975be",
+    "content-hash": "1fd4521ded47129bbfc1b33d7fb34c72",
     "packages": [
         {
             "name": "anolilab/wordpress-salt-generator",
-            "version": "v1.1.1",
+            "version": "v1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/anolilab/wordpress-salt-generator.git",
-                "reference": "3a2da4a93d2c77b6b207abe1818d7c526964a9a7"
+                "reference": "071e1145f45c7573a6d08247dcfbf8eb66779f23"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/anolilab/wordpress-salt-generator/zipball/3a2da4a93d2c77b6b207abe1818d7c526964a9a7",
-                "reference": "3a2da4a93d2c77b6b207abe1818d7c526964a9a7",
+                "url": "https://api.github.com/repos/anolilab/wordpress-salt-generator/zipball/071e1145f45c7573a6d08247dcfbf8eb66779f23",
+                "reference": "071e1145f45c7573a6d08247dcfbf8eb66779f23",
                 "shasum": ""
             },
             "require": {
@@ -26,6 +26,7 @@
                 "php": ">=5.4.0"
             },
             "require-dev": {
+                "composer/composer": "^1",
                 "fabpot/php-cs-fixer": "~1.10",
                 "mockery/mockery": "~0.9.4",
                 "phpunit/phpunit": "~4.8.8",
@@ -62,7 +63,7 @@
                 "salts",
                 "wordpress"
             ],
-            "time": "2015-10-20 00:17:51"
+            "time": "2015-10-30 10:09:10"
         },
         {
             "name": "composer/installers",
