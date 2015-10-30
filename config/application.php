@@ -15,7 +15,10 @@ if (class_exists('Dotenv\Dotenv')) {
 
     $dotenv->required(['DB_NAME', 'DB_USER', 'DB_PASSWORD', 'WP_HOME']);
 
-    if ((bool) getenv('WP_MULTISITE') && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
+    if (
+        filter_var(getenv('WP_MULTISITE'), FILTER_VALIDATE_BOOLEAN) &&
+        getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== ''
+    ) {
         $dotenv->required([
             'WP_MULTISITE_PATH_CURRENT_SITE',
             'WP_MULTISITE_SUBDOMAIN_INSTALL',
@@ -51,17 +54,26 @@ require_once('paths.php');
 require_once('database.php');
 require_once('security.php');
 
-
 // Wordpress multisite
 //
-defined('WP_ALLOW_MULTISITE') or define('WP_ALLOW_MULTISITE', (bool) getenv('WP_MULTISITE'));
+defined('WP_ALLOW_MULTISITE') or define(
+    'WP_ALLOW_MULTISITE',
+    filter_var(getenv('WP_MULTISITE'), FILTER_VALIDATE_BOOLEAN)
+);
 
-if ((bool) getenv('WP_MULTISITE') && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
+require_once('wordpress.php');
+
+if (defined('WP_ALLOW_MULTISITE') && getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE') !== '') {
     require_once('cookies.php');
     require_once('multisite.php');
 }
 
-require_once('settings.php');
-
 unset($rootDir);
 unset($domain);
+
+/**
+ * Bootstrap WordPress
+ */
+if (!defined('ABSPATH')) {
+    define('ABSPATH', WP_HOME . '/' . getenv('GW_WP_DIR') . '/');
+}

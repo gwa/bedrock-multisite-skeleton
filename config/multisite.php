@@ -1,7 +1,13 @@
 <?php
 
-defined('MULTISITE')                  or define('MULTISITE', (getenv('WP_MULTISITE') !== 'false' ? true : false));
-defined('SUBDOMAIN_INSTALL')          or define('SUBDOMAIN_INSTALL', (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') !== 'false' ? true : false));
+defined('MULTISITE')                  or define('MULTISITE', filter_var(
+    getenv('WP_MULTISITE'),
+    FILTER_VALIDATE_BOOLEAN
+));
+defined('SUBDOMAIN_INSTALL')          or define('SUBDOMAIN_INSTALL', filter_var(
+    getenv('WP_MULTISITE_SUBDOMAIN_INSTALL'),
+    FILTER_VALIDATE_BOOLEAN
+));
 
 defined('DOMAIN_CURRENT_SITE')        or define('DOMAIN_CURRENT_SITE', getenv('WP_MULTISITE_DOMAIN_CURRENT_SITE'));
 defined('PATH_CURRENT_SITE')          or define('PATH_CURRENT_SITE', getenv('WP_MULTISITE_PATH_CURRENT_SITE'));

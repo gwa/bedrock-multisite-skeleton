@@ -13,7 +13,11 @@ use Gwa\Wordpress\MultisiteResolverManager;
 use Gwa\Wordpress\MultisiteDirectoryResolver;
 use Gwa\Wordpress\DisableAutoUpdate\DisableAutoUpdateHandler;
 
-if ((bool) getenv('WP_MULTISITE') && getenv('GW_WP_DIR') && class_exists('Gwa\Wordpress\MultisiteResolverManager')) {
+if (
+    filter_var(getenv('WP_MULTISITE'), FILTER_VALIDATE_BOOLEAN) &&
+    class_exists('Gwa\Wordpress\MultisiteResolverManager') &&
+    getenv('GW_WP_DIR')
+) {
     if (getenv('WP_MULTISITE_SUBDOMAIN_INSTALL') === 'true') {
         $type = MultisiteResolverManager::TYPE_SUBDOMAIN;
     } else {
@@ -23,6 +27,6 @@ if ((bool) getenv('WP_MULTISITE') && getenv('GW_WP_DIR') && class_exists('Gwa\Wo
     (new MultisiteResolverManager(getenv('GW_WP_DIR'), $type))->init();
 }
 
-if ((bool) getenv('GW_DISABLE_WP_AUTO_UPDATE')) {
+if (filter_var(getenv('GW_DISABLE_WP_AUTO_UPDATE'), FILTER_VALIDATE_BOOLEAN)) {
     (new DisableAutoUpdateHandler())->init();
 }
