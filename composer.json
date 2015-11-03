@@ -48,7 +48,7 @@
     "koodimonni-language/core-de_de"          : "4.3.1",
     "koodimonni-language/core-en_gb"          : "4.3.1",
 
-    "gwa/multisite-directory-resolver"        : "~2.0.0",
+    "gwa/multisite-directory-resolver"        : "~2.1.0",
     "vlucas/phpdotenv"                        : "~2.0.1",
     "anolilab/wordpress-salt-generator"       : "^1.2.0"
   },

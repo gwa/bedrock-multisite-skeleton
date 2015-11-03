@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "98b2b0e4288e1716ade59540275975be",
-    "content-hash": "1fd4521ded47129bbfc1b33d7fb34c72",
+    "hash": "bbaa38ba20dc9f0bad3bbe3405696e16",
+    "content-hash": "4f1cd6334a2a38f6bf555f2e6530179e",
     "packages": [
         {
             "name": "anolilab/wordpress-salt-generator",
@@ -219,30 +219,31 @@
         },
         {
             "name": "gwa/multisite-directory-resolver",
-            "version": "v2.0.0",
+            "version": "v2.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/gwa/WpMultisiteDirectoryResolver.git",
-                "reference": "9d92e197974f67d5947259239d5eeaa27f09f35b"
+                "reference": "d129c5efec5dae7245669ba06b248704f7966e7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/gwa/WpMultisiteDirectoryResolver/zipball/9d92e197974f67d5947259239d5eeaa27f09f35b",
-                "reference": "9d92e197974f67d5947259239d5eeaa27f09f35b",
+                "url": "https://api.github.com/repos/gwa/WpMultisiteDirectoryResolver/zipball/d129c5efec5dae7245669ba06b248704f7966e7d",
+                "reference": "d129c5efec5dae7245669ba06b248704f7966e7d",
                 "shasum": ""
             },
             "require": {
+                "gwa/mockery-wp-bridge": "^1.2",
                 "php": ">=5.4.0"
             },
             "require-dev": {
-                "fabpot/php-cs-fixer": "~1.8",
-                "phpunit/phpunit": "~4.6.6",
+                "fabpot/php-cs-fixer": "~1.10",
+                "phpunit/phpunit": "~4.8",
                 "satooshi/php-coveralls": "~0.6.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "0.0.5-dev"
+                    "dev-master": "2.1.0-dev"
                 }
             },
             "autoload": {
@@ -260,13 +261,14 @@
                     "homepage": "http://www.greatwhiteark.com"
                 }
             ],
+            "description": "Adds filters that correct directory paths in a Wordpress multisite install with the WordPress installation in a custom subfolder.",
             "homepage": "https://github.com/gwa/WpMultisiteDirectoryResolver",
             "keywords": [
                 "composer",
                 "multisite",
                 "wordpress"
             ],
-            "time": "2015-07-23 12:14:19"
+            "time": "2015-10-14 18:52:51"
         },
         {
             "name": "gwa/wp-disable-auto-update",
