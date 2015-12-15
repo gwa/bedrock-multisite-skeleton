@@ -41,13 +41,13 @@
   "require": {
     "php"                                     : ">=5.5",
     "composer/installers"                     : "~1.0.22",
-    "gwa/wp-disable-auto-update"              : "^1.0.0",
     "johnpbloch/wordpress"                    : "4.4",
 
     "koodimonni/composer-dropin-installer"    : "0.2.4",
     "koodimonni-language/core-de_de"          : "4.4",
     "koodimonni-language/core-en_gb"          : "4.4",
 
+    "gwa/wp-disable-auto-update"              : "~1.0",
     "gwa/multisite-directory-resolver"        : "~2.1",
     "vlucas/phpdotenv"                        : "~2.0.1",
     "anolilab/wordpress-salt-generator"       : "~1.2"
