@@ -29,7 +29,9 @@
     "generate-salts"                          : true
   },
   "scripts": {
-    "post-install-cmd"                        : ["Anolilab\\Wordpress\\SaltGenerator\\Generator::addSalts"]
+    "post-install-cmd"                        : ["Anolilab\\Wordpress\\SaltGenerator\\Generator::addSalts"],
+    "check-cs"                                : "sh vendor/bin/php-cs-fixer fix -v --dry-run",
+    "fix-cs"                                  : "sh vendor/bin/php-cs-fixer fix"
   },
   "repositories": [{
       "type": "composer",
@@ -53,7 +55,7 @@
     "anolilab/wordpress-salt-generator"       : "~1.2"
   },
   "require-dev": {
-    "fabpot/php-cs-fixer"                     : "~1.10",
+    "fabpot/php-cs-fixer"                     : "~1.11",
 
     "wpackagist-plugin/debug-bar"             : "~0.8.2",
     "wpackagist-plugin/debug-bar-post-types"  : "~1.2",
