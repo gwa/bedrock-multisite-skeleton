@@ -9,6 +9,8 @@ public/app/uploads/*
 !public/app/mu-plugins/disallow-indexing.php
 !public/app/mu-plugins/register-theme-directory.php
 !public/app/mu-plugins/bedrock-autoloader.php
+public/app/languages/*
+!public/app/languages/.gitkeep
 
 # WordPress
 public/wp
