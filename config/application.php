@@ -34,7 +34,12 @@ if (file_exists($envConfig)) {
     require_once $envConfig;
 }
 
-$env = getenv('GW_ENV') ?: 'production';
+if (!getenv('GW_ENV')) {
+    putenv('GW_ENV=production');
+}
+
+$env = getenv('GW_ENV');
+
 $envConfig = __DIR__ . '/environments/' . $env . '.php';
 if (file_exists($envConfig)) {
     require_once $envConfig;
